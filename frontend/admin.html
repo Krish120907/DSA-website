@@ -175,29 +175,77 @@
                                   class="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono" placeholder="e.g. - 1 <= nums.length <= 10^5"></textarea>
                     </div>
 
-                    <!-- Test Case Setup (Sample) -->
+                    <!-- Test Case Setup (Dynamic) -->
                     <div class="mb-6 border-t border-slate-800 pt-4">
-                        <h3 class="text-sm font-bold text-slate-300 mb-3">Test Case Configuration</h3>
+                        <h3 class="text-sm font-bold text-slate-300 mb-4 flex items-center justify-between">
+                            <span>Test Case Configuration</span>
+                        </h3>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-500 mb-1">Sample Input</label>
-                                <textarea x-model="sampleTC.input" rows="2" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs font-mono"></textarea>
+                        <!-- Sample Test Cases Section -->
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Sample (Shown) Test Cases</h4>
+                                <button type="button" @click="addSampleTC()" class="text-xs bg-blue-600/20 hover:bg-blue-600 text-blue-400 hover:text-white px-2.5 py-1 rounded-lg border border-blue-500/20 transition-all font-semibold flex items-center">
+                                    <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                                    Add Sample
+                                </button>
                             </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-500 mb-1">Sample Expected Output</label>
-                                <textarea x-model="sampleTC.expected" rows="2" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs font-mono"></textarea>
+                            
+                            <div class="space-y-4">
+                                <template x-for="(tc, index) in sampleTCs" :key="index">
+                                    <div class="p-4 bg-slate-950/40 border border-slate-800/80 rounded-xl relative">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-xs font-semibold text-slate-500" x-text="`Sample #${index + 1}`"></span>
+                                            <button type="button" @click="removeSampleTC(index)" x-show="sampleTCs.length > 1" class="text-red-400 hover:text-red-300 transition-colors">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                            </button>
+                                        </div>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-[10px] font-semibold text-slate-500 mb-1">Input</label>
+                                                <textarea x-model="tc.input" rows="2" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs font-mono text-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
+                                            </div>
+                                            <div>
+                                                <label class="block text-[10px] font-semibold text-slate-500 mb-1">Expected Output</label>
+                                                <textarea x-model="tc.expected" rows="2" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs font-mono text-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-500 mb-1">Hidden Input</label>
-                                <textarea x-model="hiddenTC.input" rows="2" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs font-mono"></textarea>
+                        <!-- Hidden Test Cases Section -->
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Hidden Test Cases</h4>
+                                <button type="button" @click="addHiddenTC()" class="text-xs bg-indigo-600/20 hover:bg-indigo-600 text-indigo-400 hover:text-white px-2.5 py-1 rounded-lg border border-indigo-500/20 transition-all font-semibold flex items-center">
+                                    <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                                    Add Hidden
+                                </button>
                             </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-500 mb-1">Hidden Expected Output</label>
-                                <textarea x-model="hiddenTC.expected" rows="2" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs font-mono"></textarea>
+                            
+                            <div class="space-y-4">
+                                <template x-for="(tc, index) in hiddenTCs" :key="index">
+                                    <div class="p-4 bg-slate-950/40 border border-slate-800/80 rounded-xl relative">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-xs font-semibold text-slate-500" x-text="`Hidden #${index + 1}`"></span>
+                                            <button type="button" @click="removeHiddenTC(index)" x-show="hiddenTCs.length > 1" class="text-red-400 hover:text-red-300 transition-colors">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                            </button>
+                                        </div>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-[10px] font-semibold text-slate-500 mb-1">Input</label>
+                                                <textarea x-model="tc.input" rows="2" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs font-mono text-slate-100 focus:outline-none focus:ring-1 focus:ring-indigo-500"></textarea>
+                                            </div>
+                                            <div>
+                                                <label class="block text-[10px] font-semibold text-slate-500 mb-1">Expected Output</label>
+                                                <textarea x-model="tc.expected" rows="2" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs font-mono text-slate-100 focus:outline-none focus:ring-1 focus:ring-indigo-500"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
                             </div>
                         </div>
                     </div>
@@ -234,8 +282,8 @@
                     description: '',
                     constraints: ''
                 },
-                sampleTC: { input: '', expected: '' },
-                hiddenTC: { input: '', expected: '' },
+                sampleTCs: [{ input: '', expected: '' }],
+                hiddenTCs: [{ input: '', expected: '' }],
 
                 init() {
                     Auth.checkAuthGuard();
@@ -264,19 +312,39 @@
 
                 openAddModal() {
                     this.form = { title: '', difficulty: 'Easy', topic_tags: '', description: '', constraints: '' };
-                    this.sampleTC = { input: '', expected: '' };
-                    this.hiddenTC = { input: '', expected: '' };
+                    this.sampleTCs = [{ input: '', expected: '' }];
+                    this.hiddenTCs = [{ input: '', expected: '' }];
                     this.showModal = true;
                 },
 
+                addSampleTC() {
+                    this.sampleTCs.push({ input: '', expected: '' });
+                },
+                
+                removeSampleTC(index) {
+                    this.sampleTCs.splice(index, 1);
+                },
+
+                addHiddenTC() {
+                    this.hiddenTCs.push({ input: '', expected: '' });
+                },
+
+                removeHiddenTC(index) {
+                    this.hiddenTCs.splice(index, 1);
+                },
+
                 async submitProblem() {
-                    // Bundle problem details + test cases
+                    const tcs = [];
+                    this.sampleTCs.forEach(tc => {
+                        tcs.push({ input: tc.input, expected: tc.expected, is_sample: 1 });
+                    });
+                    this.hiddenTCs.forEach(tc => {
+                        tcs.push({ input: tc.input, expected: tc.expected, is_sample: 0 });
+                    });
+
                     const payload = {
                         ...this.form,
-                        test_cases: [
-                            { input: this.sampleTC.input, expected: this.sampleTC.expected, is_sample: 1 },
-                            { input: this.hiddenTC.input, expected: this.hiddenTC.expected, is_sample: 0 }
-                        ]
+                        test_cases: tcs
                     };
 
                     try {

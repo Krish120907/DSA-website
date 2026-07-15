@@ -1,15 +1,15 @@
 // Authentication Helper Utilities
 const Auth = {
     getToken() {
-        return localStorage.getItem('token');
+        return sessionStorage.getItem('token');
     },
 
     setToken(token) {
-        localStorage.setItem('token', token);
+        sessionStorage.setItem('token', token);
     },
 
     clearToken() {
-        localStorage.removeItem('token');
+        sessionStorage.removeItem('token');
     },
 
     isAuthenticated() {
