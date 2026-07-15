@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Workspace - DSA Online Judge</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f7ff',
+                            100: '#ebf0ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Monaco Editor AMD Loader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col transition-colors duration-200" x-data="workspaceApp()">
+    
+    <!-- Navbar -->
+    <nav class="border-b border-slate-800 bg-slate-900/50 backdrop-blur-md h-14 flex items-center justify-between px-6 z-50">
+        <div class="flex items-center space-x-4">
+            <a href="problems.html" class="text-slate-400 hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            </a>
+            <span class="text-sm font-semibold text-slate-300" x-text="problem.title"></span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold"
+                  :class="problem.difficulty === 'Easy' ? 'bg-green-500/10 text-green-400 border border-green-500/20' : 
+                          problem.difficulty === 'Medium' ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20' : 
+                          'bg-red-500/10 text-red-400 border border-red-500/20'"
+                  x-text="problem.difficulty"></span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <!-- Font Size -->
+            <div class="flex items-center space-x-2">
+                <span class="text-xs text-slate-400">Font</span>
+                <select x-model="fontSize" @change="updateFontSize()"
+                        class="bg-slate-800 border border-slate-700 text-xs rounded px-2 py-1 text-slate-200 focus:outline-none">
+                    <option value="12">12px</option>
+                    <option value="14">14px</option>
+                    <option value="16">16px</option>
+                    <option value="18">18px</option>
+                </select>
+            </div>
+            
+            <button @click="toggleTheme()" class="p-1.5 rounded bg-slate-800 text-slate-300 hover:text-white">
+                <svg class="h-4.5 w-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+            <span class="text-sm text-slate-300" x-text="user ? user.username : ''"></span>
+        </div>
+    </nav>
+
+    <!-- Workspace Split Container -->
+    <div class="flex-1 flex overflow-hidden">
+        
+        <!-- Left Pane: Problem Details -->
+        <div class="w-1/2 border-r border-slate-800 flex flex-col bg-slate-900/30 overflow-y-auto p-6 space-y-6">
+            <div>
+                <h1 class="text-2xl font-bold tracking-tight" x-text="problem.title"></h1>
+                
+                <!-- Topic tags -->
+                <div class="flex flex-wrap gap-2 mt-3">
+                    <template x-for="tag in (problem.topic_tags ? problem.topic_tags.split(',') : [])" :key="tag">
+                        <span class="bg-slate-800 text-slate-400 text-xs px-2.5 py-0.5 rounded-md font-medium" x-text="tag.trim()"></span>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Problem Description -->
+            <div class="prose prose-invert max-w-none text-slate-300 space-y-4">
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-400">Description</h3>
+                <div class="text-sm leading-relaxed whitespace-pre-wrap font-sans" x-text="problem.description"></div>
+            </div>
+
+            <!-- Constraints -->
+            <div class="space-y-2">
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-400">Constraints</h3>
+                <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 text-xs font-mono text-slate-300 leading-relaxed whitespace-pre-wrap" x-text="problem.constraints"></div>
+            </div>
+
+            <!-- Examples -->
+            <div class="space-y-4">
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-400">Sample Test Cases</h3>
+                <template x-for="(sample, idx) in sampleCases" :key="sample.id">
+                    <div class="border border-slate-800 rounded-xl overflow-hidden bg-slate-900/30">
+                        <div class="bg-slate-900/60 px-4 py-2 text-xs font-bold text-slate-400 border-b border-slate-800 flex justify-between">
+                            <span x-text="`Example ${idx + 1}`"></span>
+                        </div>
+                        <div class="p-4 grid grid-cols-2 gap-4 text-xs font-mono">
+                            <div>
+                                <span class="text-slate-500 font-semibold block mb-1">Input</span>
+                                <pre class="bg-slate-900 p-2 rounded text-slate-300 overflow-x-auto" x-text="sample.input"></pre>
+                            </div>
+                            <div>
+                                <span class="text-slate-500 font-semibold block mb-1">Expected Output</span>
+                                <pre class="bg-slate-900 p-2 rounded text-slate-300 overflow-x-auto" x-text="sample.expected"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- Right Pane: Code Editor & Console -->
+        <div class="w-1/2 flex flex-col overflow-hidden bg-slate-950">
+            <!-- Code Editor Container -->
+            <div class="flex-1 relative border-b border-slate-800">
+                <div id="monaco-container" class="absolute inset-0"></div>
+            </div>
+
+            <!-- Console and Run Actions Panel -->
+            <div class="h-64 flex flex-col bg-slate-900/60">
+                <!-- Tabs and Action buttons -->
+                <div class="border-b border-slate-800 px-6 py-2 flex items-center justify-between">
+                    <div class="flex space-x-4">
+                        <button class="text-sm font-bold border-b-2 border-blue-500 pb-1 text-slate-100">Console Output</button>
+                    </div>
+                    <div class="flex space-x-3">
+                        <button @click="runCode()" 
+                                class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-4 py-1.5 rounded-lg text-sm transition-colors"
+                                :disabled="running">
+                            Run Samples
+                        </button>
+                        <button @click="submitCode()" 
+                                class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-4 py-1.5 rounded-lg text-sm transition-colors shadow-lg"
+                                :disabled="running">
+                            Submit Solution
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Console Display -->
+                <div class="flex-1 p-4 overflow-y-auto font-mono text-xs text-slate-300">
+                    <div x-show="running" class="text-blue-400 font-semibold flex items-center space-x-2">
+                        <svg class="animate-spin h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                        <span>Compiling and running locally...</span>
+                    </div>
+
+                    <div x-show="!running && consoleText" class="whitespace-pre-wrap leading-relaxed" x-html="consoleText"></div>
+                    <div x-show="!running && !consoleText" class="text-slate-500 italic">No output. Click "Run Samples" to test against example inputs.</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/editor.js"></script>
+    <script src="assets/js/runner-client.js"></script>
+    <script>
+        function workspaceApp() {
+            return {
+                user: null,
+                problemId: null,
+                problem: {},
+                sampleCases: [],
+                fontSize: '14',
+                running: false,
+                consoleText: '',
+
+                async init() {
+                    Auth.checkAuthGuard();
+                    this.user = Auth.getUser();
+                    
+                    // Parse query parameters
+                    const urlParams = new URLSearchParams(window.location.search);
+                    this.problemId = urlParams.get('id');
+                    
+                    if (!this.problemId) {
+                        window.location.href = 'problems.html';
+                        return;
+                    }
+
+                    await this.fetchProblemDetails();
+                    await this.fetchSampleCases();
+                    
+                    // Load Monaco Code Editor
+                    await initMonacoEditor('monaco-container', this.problem.default_template);
+                },
+
+                async fetchProblemDetails() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/problems/${this.problemId}`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.problem = await response.json();
+                        }
+                    } catch (e) {
+                        console.error('Error fetching problem details', e);
+                    }
+                },
+
+                async fetchSampleCases() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/problems/${this.problemId}/samples`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.sampleCases = await response.json();
+                        }
+                    } catch (e) {
+                        console.error('Error fetching samples', e);
+                    }
+                },
+
+                updateFontSize() {
+                    updateEditorFontSize(parseInt(this.fontSize));
+                },
+
+                async runCode() {
+                    this.running = true;
+                    this.consoleText = '';
+                    const code = getEditorCode();
+
+                    // Convert sampleCases format to match compiler runner
+                    const tests = this.sampleCases.map(tc => ({
+                        input: tc.input,
+                        expected: tc.expected
+                    }));
+
+                    const res = await RunnerClient.executeLocally(code, tests, parseFloat(this.problem.time_limit_sec || 2.0));
+                    this.running = false;
+
+                    if (!res.success) {
+                        this.renderError(res);
+                        return;
+                    }
+
+                    this.renderRunnerOutput(res.test_cases, false);
+                },
+
+                async submitCode() {
+                    this.running = true;
+                    this.consoleText = '';
+                    const code = getEditorCode();
+
+                    // 1. Fetch ALL test cases (both sample and hidden) from backend
+                    let allTestCases = [];
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/problems/${this.problemId}/testcases`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            allTestCases = await response.json();
+                        } else {
+                            throw new Error('Unauthorized or failed to fetch test cases.');
+                        }
+                    } catch (e) {
+                        this.running = false;
+                        this.consoleText = `<span class="text-red-500">Error: Could not retrieve tests from the remote database backend.</span>`;
+                        return;
+                    }
+
+                    // 2. Execute compilation and testing locally on the user's host
+                    const res = await RunnerClient.executeLocally(code, allTestCases, parseFloat(this.problem.time_limit_sec || 2.0));
+                    
+                    if (!res.success) {
+                        this.running = false;
+                        this.renderError(res);
+                        return;
+                    }
+
+                    // Calculate metrics
+                    const totalCount = res.test_cases.length;
+                    const passedCount = res.test_cases.filter(tc => tc.passed).length;
+                    const allPassed = res.all_passed;
+                    
+                    let overallStatus = "Accepted";
+                    let maxRuntime = 0;
+                    
+                    for (const tc of res.test_cases) {
+                        if (!tc.passed) {
+                            overallStatus = tc.status; // First failing status (Wrong Answer, Time Limit, Runtime Error)
+                            break;
+                        }
+                        if (tc.runtime_ms > maxRuntime) {
+                            maxRuntime = tc.runtime_ms;
+                        }
+                    }
+
+                    // 3. Send ONLY the final aggregated stats back to backend
+                    const report = await RunnerClient.submitResultToBackend(
+                        this.problemId,
+                        overallStatus,
+                        passedCount,
+                        totalCount,
+                        maxRuntime,
+                        code
+                    );
+
+                    this.running = false;
+
+                    if (report.message) {
+                        this.consoleText += `<span class="text-blue-400 font-bold">[Backend Status]: ${report.message}</span>\n\n`;
+                    }
+
+                    this.renderRunnerOutput(res.test_cases, true);
+                },
+
+                renderError(res) {
+                    if (res.error === "Compilation Error") {
+                        this.consoleText = `<span class="text-red-500 font-bold">Compilation Error:</span>\n<pre class="bg-red-500/10 border border-red-500/20 text-red-400 p-4 rounded-xl mt-2 overflow-x-auto">${res.compile_stderr}</pre>`;
+                    } else {
+                        this.consoleText = `<span class="text-red-500 font-bold">Runner Error:</span>\n<p class="text-slate-400 mt-2">${res.error}</p>`;
+                    }
+                },
+
+                renderRunnerOutput(testCases, isSubmission) {
+                    let html = '';
+                    const title = isSubmission ? "Submission Evaluation Summary" : "Sample Run Evaluation Summary";
+                    html += `<span class="text-slate-400 font-bold uppercase tracking-wider text-xs">${title}</span>\n\n`;
+
+                    const allPassed = testCases.every(tc => tc.passed);
+                    if (allPassed) {
+                        html += `<span class="text-green-500 font-bold text-lg">✔ All Test Cases Passed!</span>\n\n`;
+                    } else {
+                        html += `<span class="text-red-500 font-bold text-lg">✘ Some Test Cases Failed</span>\n\n`;
+                    }
+
+                    testCases.forEach((tc) => {
+                        const icon = tc.passed ? '✔' : '✘';
+                        const color = tc.passed ? 'text-green-400' : 'text-red-400';
+                        const badgeColor = tc.status === 'Accepted' ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400';
+                        
+                        html += `<div class="mb-4 border border-slate-800 bg-slate-900/20 rounded-lg p-3">`;
+                        html += `  <div class="flex items-center justify-between mb-2">`;
+                        html += `    <span class="font-bold ${color}">${icon} Case #${tc.id}</span>`;
+                        html += `    <span class="px-2 py-0.5 rounded text-[10px] font-bold ${badgeColor}">${tc.status} (${tc.runtime_ms} ms)</span>`;
+                        html += `  </div>`;
+                        
+                        if (!tc.passed) {
+                            html += `  <div class="grid grid-cols-2 gap-4 mt-2 text-xs text-slate-400 font-mono">`;
+                            html += `    <div>`;
+                            html += `      <span class="text-slate-500 block mb-1">Expected Output</span>`;
+                            html += `      <pre class="bg-slate-950 p-2 rounded text-slate-300 overflow-x-auto">${tc.expected}</pre>`;
+                            html += `    </div>`;
+                            html += `    <div>`;
+                            html += `      <span class="text-slate-500 block mb-1">Actual Output</span>`;
+                            html += `      <pre class="bg-slate-950 p-2 rounded text-slate-300 overflow-x-auto">${tc.actual || '[Empty/Crash]'}</pre>`;
+                            html += `    </div>`;
+                            html += `  </div>`;
+                            if (tc.stderr) {
+                                html += `  <div class="mt-2 text-xs font-mono text-red-400">`;
+                                html += `    <span class="text-slate-500 block">Stderr / Crash Logs</span>`;
+                                html += `    <pre class="bg-red-950/20 p-2 rounded overflow-x-auto">${tc.stderr}</pre>`;
+                                html += `  </div>`;
+                            }
+                        }
+                        html += `</div>`;
+                    });
+
+                    this.consoleText += html;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
