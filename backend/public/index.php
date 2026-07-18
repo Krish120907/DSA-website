@@ -222,9 +222,16 @@ switch ($resource) {
 
     case 'users':
         $authController = new AuthController();
+        $submissionController = new SubmissionController();
         if ($method === 'GET' && $resourceId !== null && $subResource === 'profile') {
             // GET /api/users/{userId}/profile - Public profile (no auth required)
             $authController->getPublicProfile($resourceId);
+        } elseif ($method === 'GET' && $resourceId !== null && $subResource === 'submissions') {
+            // GET /api/users/{userId}/submissions - Get user's accepted submissions (no auth required)
+            $submissionController->getUserAcceptedSubmissions($resourceId);
+        } elseif ($method === 'GET' && $resourceId !== null && $subResource === 'stats') {
+            // GET /api/users/{userId}/stats - Get user's stats (no auth required)
+            $submissionController->getUserStats($resourceId);
         } else {
             http_response_code(404);
             echo json_encode(["message" => "User endpoint not found"]);

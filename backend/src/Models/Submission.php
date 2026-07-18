@@ -63,5 +63,51 @@ class Submission {
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+    public function getAcceptedSubmissionsByUser($user_id) {
+        $query = "SELECT DISTINCT s.id, s.problem_id, p.title as problem_title, p.difficulty, s.status, s.passed_count, s.total_count, s.runtime_ms, s.created_at 
+                  FROM " . $this->table_name . " s
+                  JOIN problems p ON s.problem_id = p.id
+                  WHERE s.user_id = :user_id AND s.status = 'Accepted'
+                  ORDER BY s.created_at DESC";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":user_id", $user_id);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getUserStats($user_id) {
+        // Get count of accepted problems
+        $acceptedQuery = "SELECT COUNT(DISTINCT problem_id) as solved_count 
+                          FROM " . $this->table_name . " 
+                          WHERE user_id = :user_id AND status = 'Accepted'";
+        
+        $acceptedStmt = $this->conn->prepare($acceptedQuery);
+        $acceptedStmt->bindParam(":user_id", $user_id);
+        $acceptedStmt->execute();
+        $acceptedResult = $acceptedStmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Get total submissions
+        $totalQuery = "SELECT COUNT(*) as total_submissions 
+                       FROM " . $this->table_name . " 
+                       WHERE user_id = :user_id";
+        
+        $totalStmt = $this->conn->prepare($totalQuery);
+        $totalStmt->bindParam(":user_id", $user_id);
+        $totalStmt->execute();
+        $totalResult = $totalStmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Calculate accuracy
+        $solvedCount = $acceptedResult['solved_count'] ?? 0;
+        $totalSubmissions = $totalResult['total_submissions'] ?? 0;
+        $accuracy = $totalSubmissions > 0 ? round(($solvedCount / $totalSubmissions) * 100, 2) : 0;
+        
+        return [
+            'solved_count' => $solvedCount,
+            'total_submissions' => $totalSubmissions,
+            'accuracy' => $accuracy
+        ];
+    }
 }
 ?>

@@ -56,4 +56,16 @@ class SubmissionController {
         http_response_code(200);
         echo json_encode($history);
     }
+
+    public function getUserAcceptedSubmissions($userId) {
+        $submissions = $this->submission->getAcceptedSubmissionsByUser($userId);
+        http_response_code(200);
+        echo json_encode($submissions);
+    }
+
+    public function getUserStats($userId) {
+        $stats = $this->submission->getUserStats($userId);
+        http_response_code(200);
+        echo json_encode($stats);
+    }
 }
