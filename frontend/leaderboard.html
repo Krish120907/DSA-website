@@ -51,7 +51,17 @@
                     <button @click="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                     </button>
-                    <span class="text-sm font-semibold text-slate-600 dark:text-slate-300" x-text="user ? user.username : ''"></span>
+                    <div class="flex items-center space-x-3 pl-4 border-l border-slate-200 dark:border-slate-700">
+                        <template x-if="profile && profile.avatar_url">
+                            <img :src="API_BASE_URL.replace('/api', '') + profile.avatar_url" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+                        </template>
+                        <template x-if="!profile || !profile.avatar_url">
+                            <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
+                        </template>
+                        <a href="profile.html" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+                            <span x-text="user ? user.username : ''"></span>
+                        </a>
+                    </div>
                     <button @click="Auth.logout()" class="text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg font-semibold transition-colors">Logout</button>
                 </div>
             </div>
@@ -88,7 +98,9 @@
                                 <span x-show="idx === 2" x-cloak class="text-amber-600 text-lg font-bold">🥉 3</span>
                                 <span x-show="idx > 2" x-cloak x-text="idx + 1"></span>
                             </td>
-                            <td class="px-6 py-4 text-sm font-bold text-slate-800 dark:text-slate-100" x-text="row.username"></td>
+                            <td class="px-6 py-4 text-sm font-bold text-slate-800 dark:text-slate-100">
+                                <a :href="'public-profile.html?id=' + row.id" class="text-blue-600 dark:text-blue-400 hover:underline" x-text="row.username"></a>
+                            </td>
                             <td class="px-6 py-4 text-sm font-semibold">
                                 <span class="px-2.5 py-0.5 rounded text-xs font-bold"
                                       :class="row.role === 'admin' ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400' : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400'"
@@ -119,12 +131,31 @@
         function leaderboardApp() {
             return {
                 user: null,
+                profile: null,
                 leaderboard: [],
 
                 init() {
                     Auth.checkAuthGuard();
                     this.user = Auth.getUser();
+                    this.fetchProfile();
                     this.fetchLeaderboard();
+                },
+
+                async fetchProfile() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/auth/profile`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.profile = await response.json();
+                            // Update user object with latest profile data
+                            if (this.user) {
+                                this.user.username = this.profile.username;
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Error fetching profile', e);
+                    }
                 },
 
                 async fetchLeaderboard() {

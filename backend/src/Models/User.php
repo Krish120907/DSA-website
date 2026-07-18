@@ -49,7 +49,7 @@ class User {
     }
 
     public function findById($id) {
-        $query = "SELECT id, username, email, role, streak_count, last_active_date, created_at FROM " . $this->table_name . " WHERE id = :id LIMIT 0,1";
+        $query = "SELECT id, username, email, role, streak_count, last_active_date, avatar_url, created_at FROM " . $this->table_name . " WHERE id = :id LIMIT 0,1";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":id", $id);
         $stmt->execute();
@@ -104,5 +104,38 @@ class User {
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+
+    public function updateAvatar($id, $avatar_url) {
+        $query = "UPDATE " . $this->table_name . " SET avatar_url = :avatar_url WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":avatar_url", $avatar_url);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
+
+    public function getPublicProfile($id) {
+        // Get public profile information for another user
+        $query = "SELECT id, username, avatar_url, streak_count, created_at FROM " . $this->table_name . " WHERE id = :id LIMIT 0,1";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function findByUsername($username) {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE username = :username LIMIT 0,1";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":username", $username);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
+    public function updateUsername($id, $username) {
+        $query = "UPDATE " . $this->table_name . " SET username = :username WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
     }
 }

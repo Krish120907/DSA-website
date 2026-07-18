@@ -58,10 +58,20 @@
                 </select>
             </div>
             
-            <button @click="toggleTheme()" class="p-1.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
-                <svg class="h-4.5 w-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            <button @click="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
             </button>
-            <span class="text-sm text-slate-600 dark:text-slate-300" x-text="user ? user.username : ''"></span>
+            <div class="flex items-center space-x-3 pl-4 border-l border-slate-200 dark:border-slate-700">
+                <template x-if="profile && profile.avatar_url">
+                    <img :src="API_BASE_URL.replace('/api', '') + profile.avatar_url" alt="Profile" class="w-7 h-7 rounded-full object-cover">
+                </template>
+                <template x-if="!profile || !profile.avatar_url">
+                    <div class="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
+                </template>
+                <a href="profile.html" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+                    <span x-text="user ? user.username : ''"></span>
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -189,7 +199,7 @@
                                     <div class="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center text-white text-sm font-semibold" x-text="comment.username.charAt(0).toUpperCase()"></div>
                                     <div class="flex-1 min-w-0">
                                         <div class="flex items-center space-x-2 mb-2">
-                                            <span class="font-semibold text-slate-800 dark:text-slate-100" x-text="comment.username"></span>
+                                            <a :href="'public-profile.html?id=' + comment.user_id" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline" x-text="comment.username"></a>
                                             <span class="text-xs text-slate-500" x-text="formatDate(comment.created_at)"></span>
                                             <template x-if="comment.updated_at !== comment.created_at">
                                                 <span class="text-xs text-slate-400">(edited)</span>
@@ -295,7 +305,7 @@
                                                         <div class="w-6 h-6 bg-slate-500 rounded-full flex items-center justify-center text-white text-xs font-semibold" x-text="reply.username.charAt(0).toUpperCase()"></div>
                                                         <div class="flex-1 min-w-0">
                                                             <div class="flex items-center space-x-2 mb-1">
-                                                                <span class="font-medium text-slate-700 dark:text-slate-300 text-sm" x-text="reply.username"></span>
+                                                                <a :href="'public-profile.html?id=' + reply.user_id" class="font-medium text-blue-600 dark:text-blue-400 hover:underline text-sm" x-text="reply.username"></a>
                                                                 <span class="text-xs text-slate-500" x-text="formatDate(reply.created_at)"></span>
                                                             </div>
                                                             <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed whitespace-pre-wrap" x-text="reply.content"></p>
@@ -409,6 +419,7 @@
         function workspaceApp() {
             return {
                 user: null,
+                profile: null,
                 problemId: null,
                 problem: {},
                 sampleCases: [],
@@ -439,12 +450,30 @@
                         return;
                     }
 
+                    await this.fetchProfile();
                     await this.fetchProblemDetails();
                     await this.fetchSampleCases();
                     await this.fetchComments();
                     
                     // Load Monaco Code Editor
                     await initMonacoEditor('monaco-container', this.problem.default_template);
+                },
+
+                async fetchProfile() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/auth/profile`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.profile = await response.json();
+                            // Update user object with latest profile data
+                            if (this.user) {
+                                this.user.username = this.profile.username;
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Error fetching profile', e);
+                    }
                 },
 
                 async fetchProblemDetails() {

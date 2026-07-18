@@ -1,16 +1,19 @@
 <?php
 require_once __DIR__ . '/../../config/database.php';
 require_once __DIR__ . '/../Models/Comment.php';
+require_once __DIR__ . '/../Models/Notification.php';
 require_once __DIR__ . '/../Middleware/AuthMiddleware.php';
 
 class CommentController {
     private $db;
     private $comment;
+    private $notification;
 
     public function __construct() {
         $database = new Database();
         $this->db = $database->getConnection();
         $this->comment = new Comment($this->db);
+        $this->notification = new Notification($this->db);
     }
 
     // Get all comments for a problem
@@ -67,6 +70,21 @@ class CommentController {
         $comment_id = $this->comment->create($data['problem_id'], $user_id, $content, $parent_comment_id);
 
         if ($comment_id) {
+            // If this is a reply, notify the original commenter
+            if ($parent_comment_id) {
+                $parentComment = $this->comment->getById($parent_comment_id);
+                if ($parentComment && $parentComment['user_id'] != $user_id) {
+                    // Create notification for the parent commenter
+                    $this->notification->create(
+                        $parentComment['user_id'],
+                        $data['problem_id'],
+                        'reply',
+                        'New Reply to Your Comment',
+                        'Someone replied to your comment on this problem.'
+                    );
+                }
+            }
+
             http_response_code(201);
             echo json_encode([
                 "message" => "Comment created successfully.",

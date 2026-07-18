@@ -49,6 +49,12 @@ switch ($resource) {
         } elseif ($method === 'GET' && $resourceId === 'profile') {
             $user = AuthMiddleware::authenticate();
             $authController->getProfile($user['id']);
+        } elseif ($method === 'POST' && $resourceId === 'profile' && $subResource === 'avatar') {
+            $user = AuthMiddleware::authenticate();
+            $authController->updateProfilePicture($user['id']);
+        } elseif ($method === 'PUT' && $resourceId === 'profile' && $subResource === 'username') {
+            $user = AuthMiddleware::authenticate();
+            $authController->updateUsername($user['id'], $body);
         } else {
             http_response_code(404);
             echo json_encode(["message" => "Auth Endpoint Not Found"]);
@@ -211,6 +217,17 @@ switch ($resource) {
         } else {
             http_response_code(405);
             echo json_encode(["message" => "Method Not Allowed"]);
+        }
+        break;
+
+    case 'users':
+        $authController = new AuthController();
+        if ($method === 'GET' && $resourceId !== null && $subResource === 'profile') {
+            // GET /api/users/{userId}/profile - Public profile (no auth required)
+            $authController->getPublicProfile($resourceId);
+        } else {
+            http_response_code(404);
+            echo json_encode(["message" => "User endpoint not found"]);
         }
         break;
 

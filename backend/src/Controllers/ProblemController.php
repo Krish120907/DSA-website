@@ -13,14 +13,18 @@ class ProblemController {
     }
 
     public function list($filters) {
-        $approvedOnly = isset($filters['approved']) ? $filters['approved'] : true;
+        error_log("ProblemController::list called with filters: " . json_encode($filters));
         
-        if ($approvedOnly === 'false' || $approvedOnly === '0' || $approvedOnly === 0 || $approvedOnly === false) {
-            $approvedOnly = 0;
-        } else {
-            $approvedOnly = 1;
+        $approvedOnly = isset($filters['approved']) ? $filters['approved'] : 1;
+        
+        // Convert string values to integers
+        if (is_string($approvedOnly)) {
+            $approvedOnly = (int)$approvedOnly;
         }
 
+        error_log("approvedOnly converted to: " . $approvedOnly);
+
+        // Only require authentication check for unapproved problems
         if ($approvedOnly === 0) {
             try {
                 $user = AuthMiddleware::authenticate();
@@ -41,6 +45,8 @@ class ProblemController {
         $filters['approved'] = $approvedOnly;
         
         $problems = $this->problem->getAll($filters);
+        error_log("Problems found: " . count($problems));
+        error_log("Problems: " . json_encode($problems));
         http_response_code(200);
         echo json_encode($problems);
     }
