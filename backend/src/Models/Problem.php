@@ -8,7 +8,7 @@ class Problem {
     }
 
     public function getAll($filters = []) {
-        $query = "SELECT p.id, p.title, p.difficulty, p.topic_tags, p.approved, u.username as author 
+        $query = "SELECT p.id, p.title, p.difficulty, p.topic_tags, p.approved, p.rejection_reason, p.approval_comment, u.username as author 
                   FROM " . $this->table_name . " p
                   JOIN users u ON p.author_id = u.id 
                   WHERE 1=1";
@@ -152,9 +152,19 @@ class Problem {
         return $stmt->execute();
     }
 
-    public function approve($id) {
-        $query = "UPDATE " . $this->table_name . " SET approved = 1 WHERE id = :id";
+    public function approve($id, $difficulty, $comment = null) {
+        $query = "UPDATE " . $this->table_name . " SET approved = 1, difficulty = :difficulty, rejection_reason = NULL, approval_comment = :comment WHERE id = :id";
         $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":difficulty", $difficulty);
+        $stmt->bindParam(":comment", $comment);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
+
+    public function reject($id, $reason) {
+        $query = "UPDATE " . $this->table_name . " SET approved = 2, rejection_reason = :reason WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":reason", $reason);
         $stmt->bindParam(":id", $id);
         return $stmt->execute();
     }

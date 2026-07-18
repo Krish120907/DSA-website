@@ -95,7 +95,7 @@ class User {
 
     public function getLeaderboard() {
         // Get leaderboard ranked by problems solved
-        $query = "SELECT u.id, u.username, u.role, u.streak_count, COUNT(s.id) as solved_count 
+        $query = "SELECT u.id, u.username, u.role, u.streak_count, COUNT(DISTINCT s.problem_id) as solved_count 
                   FROM " . $this->table_name . " u
                   LEFT JOIN submissions s ON u.id = s.user_id AND s.status = 'Accepted'
                   GROUP BY u.id

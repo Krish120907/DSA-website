@@ -26,6 +26,8 @@ CREATE TABLE IF NOT EXISTS problems (
     memory_limit_mb INT DEFAULT 256,
     author_id INT NOT NULL,
     approved BOOLEAN DEFAULT FALSE,
+    rejection_reason TEXT DEFAULT NULL,
+    approval_comment TEXT DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -50,6 +52,20 @@ CREATE TABLE IF NOT EXISTS submissions (
     total_count INT NOT NULL,
     runtime_ms INT NOT NULL,
     code_content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (problem_id) REFERENCES problems(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Notifications table
+CREATE TABLE IF NOT EXISTS notifications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    problem_id INT NOT NULL,
+    type ENUM('problem_approved', 'problem_rejected') NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    is_read BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (problem_id) REFERENCES problems(id) ON DELETE CASCADE

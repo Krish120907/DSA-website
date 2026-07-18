@@ -1,4 +1,7 @@
-/* Base Tailwind setup & custom themes */
+/* Hide Alpine x-cloak elements until Alpine initializes */
+[x-cloak] { display: none !important; }
+
+
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
 
 :root {
@@ -14,17 +17,23 @@ code, pre, .monaco-editor {
     font-family: var(--font-mono) !important;
 }
 
-/* Glassmorphism custom styling utilities */
+/* Flat panels */
 .glass-panel {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+.dark .glass-panel {
+    background-color: #1e293b;
+    border: 1px solid #334155;
 }
 
 .glass-panel-dark {
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+.dark .glass-panel-dark {
+    background-color: #1e293b;
+    border: 1px solid #334155;
 }
 
 /* Custom Scrollbar */

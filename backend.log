@@ -1,0 +1,842 @@
+[Sat Jul 18 10:18:57 2026] PHP 8.4.5 Development Server (http://0.0.0.0:8080) started
+[Sat Jul 18 10:20:13 2026] 127.0.0.1:36704 Accepted
+[Sat Jul 18 10:20:13 2026] 127.0.0.1:36704 [401]: GET /api/auth/profile
+[Sat Jul 18 10:20:13 2026] 127.0.0.1:36704 Closing
+[Sat Jul 18 10:20:13 2026] 127.0.0.1:36716 Accepted
+[Sat Jul 18 10:20:13 2026] 127.0.0.1:36716 [401]: GET /api/submissions/history
+[Sat Jul 18 10:20:13 2026] 127.0.0.1:36716 Closing
+[Sat Jul 18 10:20:28 2026] 127.0.0.1:45336 Accepted
+[Sat Jul 18 10:20:28 2026] 127.0.0.1:45336 [200]: OPTIONS /api/auth/login
+[Sat Jul 18 10:20:28 2026] 127.0.0.1:45336 Closing
+[Sat Jul 18 10:20:28 2026] 127.0.0.1:45342 Accepted
+[Sat Jul 18 10:20:30 2026] 127.0.0.1:45342 [401]: POST /api/auth/login
+[Sat Jul 18 10:20:30 2026] 127.0.0.1:45342 Closing
+[Sat Jul 18 10:20:34 2026] 127.0.0.1:56560 Accepted
+[Sat Jul 18 10:20:34 2026] 127.0.0.1:56560 [401]: POST /api/auth/login
+[Sat Jul 18 10:20:34 2026] 127.0.0.1:56560 Closing
+[Sat Jul 18 10:20:39 2026] 127.0.0.1:56562 Accepted
+[Sat Jul 18 10:20:39 2026] 127.0.0.1:56562 [401]: POST /api/auth/login
+[Sat Jul 18 10:20:39 2026] 127.0.0.1:56562 Closing
+[Sat Jul 18 10:20:43 2026] 127.0.0.1:56622 Accepted
+[Sat Jul 18 10:20:44 2026] 127.0.0.1:56622 [401]: POST /api/auth/login
+[Sat Jul 18 10:20:44 2026] 127.0.0.1:56622 Closing
+[Sat Jul 18 10:20:48 2026] 127.0.0.1:56632 Accepted
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:56632 [200]: POST /api/auth/login
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:56632 Closing
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41662 Accepted
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41662 [200]: OPTIONS /api/auth/profile
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41662 Closing
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41674 Accepted
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41690 Accepted
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41674 [200]: GET /api/auth/profile
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41674 Closing
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41696 Accepted
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41690 [200]: OPTIONS /api/submissions/history
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41690 Closing
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41700 Accepted
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41696 [200]: OPTIONS /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41696 Closing
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41700 [200]: OPTIONS /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41700 Closing
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41706 Accepted
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41718 Accepted
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41732 Accepted
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41734 Accepted
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41706 [200]: OPTIONS /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41706 Closing
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41718 [200]: GET /api/submissions/history
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41718 Closing
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41732 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41732 Closing
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41742 Accepted
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41734 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41734 Closing
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41756 Accepted
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41742 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41742 Closing
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41756 [200]: OPTIONS /api/problems
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41756 Closing
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41764 Accepted
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41764 [200]: GET /api/problems
+[Sat Jul 18 10:20:49 2026] 127.0.0.1:41764 Closing
+[Sat Jul 18 10:21:42 2026] 127.0.0.1:48690 Accepted
+[Sat Jul 18 10:21:42 2026] PHP Warning:  Undefined array key "difficulty" in /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/ProblemController.php on line 144
+[Sat Jul 18 10:21:42 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'difficulty' cannot be null in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Problem.php:81
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Problem.php(81): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/ProblemController.php(142): Problem->create()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(78): ProblemController->submitProblem()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Problem.php on line 81
+[Sat Jul 18 10:21:42 2026] 127.0.0.1:48690 [500]: POST /api/problems - Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'difficulty' cannot be null in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Problem.php:81
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Problem.php(81): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/ProblemController.php(142): Problem->create()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(78): ProblemController->submitProblem()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Problem.php on line 81
+[Sat Jul 18 10:21:42 2026] 127.0.0.1:48690 Closing
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48138 Accepted
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48138 [200]: GET /api/auth/profile
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48138 Closing
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48152 Accepted
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48152 [200]: GET /api/submissions/history
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48152 Closing
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48154 Accepted
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48154 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48154 Closing
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48164 Accepted
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48164 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48164 Closing
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48180 Accepted
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48180 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48180 Closing
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48192 Accepted
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48192 [200]: GET /api/problems
+[Sat Jul 18 10:21:50 2026] 127.0.0.1:48192 Closing
+[Sat Jul 18 10:22:04 2026] 127.0.0.1:58160 Accepted
+[Sat Jul 18 10:22:04 2026] PHP Warning:  Undefined array key "difficulty" in /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/ProblemController.php on line 144
+[Sat Jul 18 10:22:04 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'difficulty' cannot be null in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Problem.php:81
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Problem.php(81): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/ProblemController.php(142): Problem->create()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(78): ProblemController->submitProblem()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Problem.php on line 81
+[Sat Jul 18 10:22:04 2026] 127.0.0.1:58160 [500]: POST /api/problems - Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'difficulty' cannot be null in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Problem.php:81
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Problem.php(81): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/ProblemController.php(142): Problem->create()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(78): ProblemController->submitProblem()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Problem.php on line 81
+[Sat Jul 18 10:22:04 2026] 127.0.0.1:58160 Closing
+[Sat Jul 18 10:23:35 2026] 127.0.0.1:48922 Accepted
+[Sat Jul 18 10:23:35 2026] 127.0.0.1:48922 [201]: POST /api/problems
+[Sat Jul 18 10:23:35 2026] 127.0.0.1:48922 Closing
+[Sat Jul 18 10:23:38 2026] 127.0.0.1:48928 Accepted
+[Sat Jul 18 10:23:38 2026] 127.0.0.1:48928 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:23:38 2026] 127.0.0.1:48928 Closing
+[Sat Jul 18 10:23:38 2026] 127.0.0.1:48936 Accepted
+[Sat Jul 18 10:23:38 2026] 127.0.0.1:48936 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:23:38 2026] 127.0.0.1:48936 Closing
+[Sat Jul 18 10:23:38 2026] 127.0.0.1:48942 Accepted
+[Sat Jul 18 10:23:38 2026] 127.0.0.1:48942 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:23:38 2026] 127.0.0.1:48942 Closing
+[Sat Jul 18 10:24:10 2026] 127.0.0.1:58102 Accepted
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58102 [200]: POST /api/auth/login
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58102 Closing
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58114 Accepted
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58114 [200]: GET /api/auth/profile
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58114 Closing
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58118 Accepted
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58118 [200]: GET /api/submissions/history
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58118 Closing
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58128 Accepted
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58128 [200]: OPTIONS /api/problems?author_id=1&approved=1
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58128 Closing
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58134 Accepted
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58144 Accepted
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58134 [200]: GET /api/problems?author_id=1&approved=1
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58134 Closing
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58144 [200]: OPTIONS /api/problems?author_id=1&approved=0
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58144 Closing
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58150 Accepted
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58166 Accepted
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58150 [200]: OPTIONS /api/problems?author_id=1&approved=2
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58150 Closing
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58166 [200]: GET /api/problems?author_id=1&approved=0
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58166 Closing
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58174 Accepted
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58174 [200]: GET /api/problems?author_id=1&approved=2
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58174 Closing
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58176 Accepted
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58176 [200]: GET /api/problems
+[Sat Jul 18 10:24:11 2026] 127.0.0.1:58176 Closing
+[Sat Jul 18 10:24:14 2026] 127.0.0.1:58190 Accepted
+[Sat Jul 18 10:24:14 2026] 127.0.0.1:58190 [200]: OPTIONS /api/admin/problems
+[Sat Jul 18 10:24:14 2026] 127.0.0.1:58190 Closing
+[Sat Jul 18 10:24:14 2026] 127.0.0.1:58206 Accepted
+[Sat Jul 18 10:24:14 2026] 127.0.0.1:58206 [200]: GET /api/admin/problems
+[Sat Jul 18 10:24:14 2026] 127.0.0.1:58206 Closing
+[Sat Jul 18 10:24:24 2026] 127.0.0.1:57958 Accepted
+[Sat Jul 18 10:24:24 2026] 127.0.0.1:57958 [200]: OPTIONS /api/admin/problems/11/reject
+[Sat Jul 18 10:24:24 2026] 127.0.0.1:57958 Closing
+[Sat Jul 18 10:24:24 2026] 127.0.0.1:57962 Accepted
+[Sat Jul 18 10:24:25 2026] 127.0.0.1:57962 [200]: POST /api/admin/problems/11/reject
+[Sat Jul 18 10:24:25 2026] 127.0.0.1:57962 Closing
+[Sat Jul 18 10:24:25 2026] 127.0.0.1:57974 Accepted
+[Sat Jul 18 10:24:25 2026] 127.0.0.1:57974 [200]: GET /api/admin/problems
+[Sat Jul 18 10:24:25 2026] 127.0.0.1:57974 Closing
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41356 Accepted
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41356 [200]: GET /api/auth/profile
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41356 Closing
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41370 Accepted
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41378 Accepted
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41370 [200]: GET /api/submissions/history
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41370 Closing
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41394 Accepted
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41378 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41378 Closing
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41410 Accepted
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41394 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41394 Closing
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41410 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41410 Closing
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41414 Accepted
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41414 [200]: GET /api/problems
+[Sat Jul 18 10:24:30 2026] 127.0.0.1:41414 Closing
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49934 Accepted
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49934 [200]: GET /api/auth/profile
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49934 Closing
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49948 Accepted
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49948 [200]: GET /api/submissions/history
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49948 Closing
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49960 Accepted
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49960 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49960 Closing
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49966 Accepted
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49966 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49966 Closing
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49982 Accepted
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49982 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49982 Closing
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49996 Accepted
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49996 [200]: GET /api/problems
+[Sat Jul 18 10:24:41 2026] 127.0.0.1:49996 Closing
+[Sat Jul 18 10:27:45 2026] 127.0.0.1:34774 Accepted
+[Sat Jul 18 10:27:45 2026] 127.0.0.1:34774 [200]: GET /api/auth/profile
+[Sat Jul 18 10:27:45 2026] 127.0.0.1:34774 Closing
+[Sat Jul 18 10:27:45 2026] 127.0.0.1:34790 Accepted
+[Sat Jul 18 10:27:45 2026] 127.0.0.1:34798 Accepted
+[Sat Jul 18 10:27:45 2026] 127.0.0.1:34790 [200]: GET /api/submissions/history
+[Sat Jul 18 10:27:45 2026] 127.0.0.1:34790 Closing
+[Sat Jul 18 10:27:45 2026] 127.0.0.1:34804 Accepted
+[Sat Jul 18 10:27:45 2026] 127.0.0.1:34798 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:27:45 2026] 127.0.0.1:34798 Closing
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34804 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34804 Closing
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34812 Accepted
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34812 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34812 Closing
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34822 Accepted
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34822 [200]: OPTIONS /api/notifications
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34822 Closing
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34838 Accepted
+[Sat Jul 18 10:27:46 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dsa_oj.notifications' doesn't exist in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php:39
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php(39): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/NotificationController.php(16): Notification->getByUserId()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(192): NotificationController->getNotifications()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php on line 39
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34838 [500]: GET /api/notifications - Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dsa_oj.notifications' doesn't exist in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php:39
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php(39): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/NotificationController.php(16): Notification->getByUserId()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(192): NotificationController->getNotifications()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php on line 39
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34838 Closing
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34848 Accepted
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34848 [200]: GET /api/problems
+[Sat Jul 18 10:27:46 2026] 127.0.0.1:34848 Closing
+[Sat Jul 18 10:28:08 2026] 127.0.0.1:49822 Accepted
+[Sat Jul 18 10:28:08 2026] 127.0.0.1:49822 [201]: POST /api/problems
+[Sat Jul 18 10:28:08 2026] 127.0.0.1:49822 Closing
+[Sat Jul 18 10:28:10 2026] 127.0.0.1:59504 Accepted
+[Sat Jul 18 10:28:10 2026] 127.0.0.1:59504 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:28:10 2026] 127.0.0.1:59504 Closing
+[Sat Jul 18 10:28:10 2026] 127.0.0.1:59514 Accepted
+[Sat Jul 18 10:28:10 2026] 127.0.0.1:59528 Accepted
+[Sat Jul 18 10:28:10 2026] 127.0.0.1:59514 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:28:10 2026] 127.0.0.1:59514 Closing
+[Sat Jul 18 10:28:10 2026] 127.0.0.1:59528 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:28:10 2026] 127.0.0.1:59528 Closing
+[Sat Jul 18 10:28:13 2026] 127.0.0.1:59542 Accepted
+[Sat Jul 18 10:28:13 2026] 127.0.0.1:59542 [200]: GET /api/admin/problems
+[Sat Jul 18 10:28:13 2026] 127.0.0.1:59542 Closing
+[Sat Jul 18 10:28:16 2026] 127.0.0.1:59544 Accepted
+[Sat Jul 18 10:28:16 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dsa_oj.notifications' doesn't exist in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php:39
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php(39): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/NotificationController.php(16): Notification->getByUserId()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(192): NotificationController->getNotifications()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php on line 39
+[Sat Jul 18 10:28:16 2026] 127.0.0.1:59544 [500]: GET /api/notifications - Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dsa_oj.notifications' doesn't exist in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php:39
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php(39): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/NotificationController.php(16): Notification->getByUserId()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(192): NotificationController->getNotifications()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php on line 39
+[Sat Jul 18 10:28:16 2026] 127.0.0.1:59544 Closing
+[Sat Jul 18 10:28:32 2026] 127.0.0.1:53746 Accepted
+[Sat Jul 18 10:28:32 2026] 127.0.0.1:53746 [200]: OPTIONS /api/admin/problems/12/reject
+[Sat Jul 18 10:28:32 2026] 127.0.0.1:53746 Closing
+[Sat Jul 18 10:28:32 2026] 127.0.0.1:53752 Accepted
+[Sat Jul 18 10:28:32 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dsa_oj.notifications' doesn't exist in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php:22
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php(22): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/AdminController.php(170): Notification->create()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(125): AdminController->rejectProblem()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php on line 22
+[Sat Jul 18 10:28:32 2026] 127.0.0.1:53752 [500]: POST /api/admin/problems/12/reject - Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dsa_oj.notifications' doesn't exist in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php:22
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php(22): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/AdminController.php(170): Notification->create()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(125): AdminController->rejectProblem()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php on line 22
+[Sat Jul 18 10:28:32 2026] 127.0.0.1:53752 Closing
+[Sat Jul 18 10:28:38 2026] 127.0.0.1:53768 Accepted
+[Sat Jul 18 10:28:38 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dsa_oj.notifications' doesn't exist in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php:22
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php(22): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/AdminController.php(170): Notification->create()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(125): AdminController->rejectProblem()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php on line 22
+[Sat Jul 18 10:28:38 2026] 127.0.0.1:53768 [500]: POST /api/admin/problems/12/reject - Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dsa_oj.notifications' doesn't exist in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php:22
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php(22): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/AdminController.php(170): Notification->create()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(125): AdminController->rejectProblem()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php on line 22
+[Sat Jul 18 10:28:38 2026] 127.0.0.1:53768 Closing
+[Sat Jul 18 10:28:46 2026] 127.0.0.1:55248 Accepted
+[Sat Jul 18 10:28:46 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dsa_oj.notifications' doesn't exist in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php:39
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php(39): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/NotificationController.php(16): Notification->getByUserId()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(192): NotificationController->getNotifications()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php on line 39
+[Sat Jul 18 10:28:46 2026] 127.0.0.1:55248 [500]: GET /api/notifications - Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dsa_oj.notifications' doesn't exist in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php:39
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php(39): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/NotificationController.php(16): Notification->getByUserId()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(192): NotificationController->getNotifications()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php on line 39
+[Sat Jul 18 10:28:46 2026] 127.0.0.1:55248 Closing
+[Sat Jul 18 10:29:16 2026] 127.0.0.1:40466 Accepted
+[Sat Jul 18 10:29:16 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dsa_oj.notifications' doesn't exist in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php:39
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php(39): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/NotificationController.php(16): Notification->getByUserId()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(192): NotificationController->getNotifications()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php on line 39
+[Sat Jul 18 10:29:16 2026] 127.0.0.1:40466 [500]: GET /api/notifications - Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dsa_oj.notifications' doesn't exist in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php:39
+Stack trace:
+#0 /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php(39): PDOStatement->execute()
+#1 /home/krish/Desktop/internship/DSA-website/backend/src/Controllers/NotificationController.php(16): Notification->getByUserId()
+#2 /home/krish/Desktop/internship/DSA-website/backend/public/index.php(192): NotificationController->getNotifications()
+#3 {main}
+  thrown in /home/krish/Desktop/internship/DSA-website/backend/src/Models/Notification.php on line 39
+[Sat Jul 18 10:29:16 2026] 127.0.0.1:40466 Closing
+[Sat Jul 18 10:29:46 2026] 127.0.0.1:34362 Accepted
+[Sat Jul 18 10:29:46 2026] 127.0.0.1:34362 [500]: GET /api/notifications
+[Sat Jul 18 10:29:46 2026] 127.0.0.1:34362 Closing
+[Sat Jul 18 10:30:16 2026] 127.0.0.1:43262 Accepted
+[Sat Jul 18 10:30:16 2026] 127.0.0.1:43262 [200]: GET /api/notifications
+[Sat Jul 18 10:30:16 2026] 127.0.0.1:43262 Closing
+[Sat Jul 18 10:30:16 2026] 127.0.0.1:43274 Accepted
+[Sat Jul 18 10:30:16 2026] 127.0.0.1:43274 [200]: OPTIONS /api/notifications/count
+[Sat Jul 18 10:30:16 2026] 127.0.0.1:43274 Closing
+[Sat Jul 18 10:30:16 2026] 127.0.0.1:43290 Accepted
+[Sat Jul 18 10:30:16 2026] 127.0.0.1:43290 [200]: GET /api/notifications/count
+[Sat Jul 18 10:30:16 2026] 127.0.0.1:43290 Closing
+[Sat Jul 18 10:30:31 2026] 127.0.0.1:47018 Accepted
+[Sat Jul 18 10:30:31 2026] 127.0.0.1:47018 [200]: POST /api/admin/problems/12/reject
+[Sat Jul 18 10:30:31 2026] 127.0.0.1:47018 Closing
+[Sat Jul 18 10:30:31 2026] 127.0.0.1:47032 Accepted
+[Sat Jul 18 10:30:31 2026] 127.0.0.1:47032 [200]: GET /api/admin/problems
+[Sat Jul 18 10:30:31 2026] 127.0.0.1:47032 Closing
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47034 Accepted
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47034 [200]: GET /api/auth/profile
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47034 Closing
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47048 Accepted
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47048 [200]: GET /api/submissions/history
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47048 Closing
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47052 Accepted
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47052 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47052 Closing
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47068 Accepted
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47074 Accepted
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47068 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47068 Closing
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47086 Accepted
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47074 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47074 Closing
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47086 [200]: GET /api/notifications
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47086 Closing
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47102 Accepted
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47102 [200]: GET /api/problems
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47102 Closing
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47112 Accepted
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47112 [200]: GET /api/notifications/count
+[Sat Jul 18 10:30:36 2026] 127.0.0.1:47112 Closing
+[Sat Jul 18 10:30:47 2026] 127.0.0.1:39988 Accepted
+[Sat Jul 18 10:30:47 2026] 127.0.0.1:39988 [200]: OPTIONS /api/notifications/1/read
+[Sat Jul 18 10:30:47 2026] 127.0.0.1:39988 Closing
+[Sat Jul 18 10:30:47 2026] 127.0.0.1:39998 Accepted
+[Sat Jul 18 10:30:47 2026] 127.0.0.1:39998 [200]: PUT /api/notifications/1/read
+[Sat Jul 18 10:30:47 2026] 127.0.0.1:39998 Closing
+[Sat Jul 18 10:30:47 2026] 127.0.0.1:40000 Accepted
+[Sat Jul 18 10:30:47 2026] 127.0.0.1:40000 [200]: GET /api/notifications
+[Sat Jul 18 10:30:47 2026] 127.0.0.1:40000 Closing
+[Sat Jul 18 10:30:47 2026] 127.0.0.1:40002 Accepted
+[Sat Jul 18 10:30:47 2026] 127.0.0.1:40002 [200]: GET /api/notifications/count
+[Sat Jul 18 10:30:47 2026] 127.0.0.1:40002 Closing
+[Sat Jul 18 10:30:51 2026] 127.0.0.1:42316 Accepted
+[Sat Jul 18 10:30:51 2026] 127.0.0.1:42316 [200]: PUT /api/notifications/1/read
+[Sat Jul 18 10:30:51 2026] 127.0.0.1:42316 Closing
+[Sat Jul 18 10:30:51 2026] 127.0.0.1:42320 Accepted
+[Sat Jul 18 10:30:51 2026] 127.0.0.1:42320 [200]: GET /api/notifications
+[Sat Jul 18 10:30:51 2026] 127.0.0.1:42320 Closing
+[Sat Jul 18 10:30:51 2026] 127.0.0.1:42324 Accepted
+[Sat Jul 18 10:30:51 2026] 127.0.0.1:42324 [200]: GET /api/notifications/count
+[Sat Jul 18 10:30:51 2026] 127.0.0.1:42324 Closing
+[Sat Jul 18 10:31:06 2026] 127.0.0.1:46118 Accepted
+[Sat Jul 18 10:31:06 2026] 127.0.0.1:46118 [200]: GET /api/notifications
+[Sat Jul 18 10:31:06 2026] 127.0.0.1:46118 Closing
+[Sat Jul 18 10:31:06 2026] 127.0.0.1:46124 Accepted
+[Sat Jul 18 10:31:06 2026] 127.0.0.1:46124 [200]: GET /api/notifications/count
+[Sat Jul 18 10:31:06 2026] 127.0.0.1:46124 Closing
+[Sat Jul 18 10:31:36 2026] 127.0.0.1:42382 Accepted
+[Sat Jul 18 10:31:36 2026] 127.0.0.1:42382 [200]: GET /api/notifications
+[Sat Jul 18 10:31:36 2026] 127.0.0.1:42382 Closing
+[Sat Jul 18 10:31:36 2026] 127.0.0.1:42396 Accepted
+[Sat Jul 18 10:31:36 2026] 127.0.0.1:42396 [200]: GET /api/notifications/count
+[Sat Jul 18 10:31:36 2026] 127.0.0.1:42396 Closing
+[Sat Jul 18 10:32:06 2026] 127.0.0.1:48354 Accepted
+[Sat Jul 18 10:32:06 2026] 127.0.0.1:48354 [200]: GET /api/notifications
+[Sat Jul 18 10:32:06 2026] 127.0.0.1:48354 Closing
+[Sat Jul 18 10:32:06 2026] 127.0.0.1:48366 Accepted
+[Sat Jul 18 10:32:06 2026] 127.0.0.1:48366 [200]: GET /api/notifications/count
+[Sat Jul 18 10:32:06 2026] 127.0.0.1:48366 Closing
+[Sat Jul 18 10:32:36 2026] 127.0.0.1:44200 Accepted
+[Sat Jul 18 10:32:36 2026] 127.0.0.1:44200 [200]: GET /api/notifications
+[Sat Jul 18 10:32:36 2026] 127.0.0.1:44200 Closing
+[Sat Jul 18 10:32:36 2026] 127.0.0.1:44210 Accepted
+[Sat Jul 18 10:32:36 2026] 127.0.0.1:44210 [200]: GET /api/notifications/count
+[Sat Jul 18 10:32:36 2026] 127.0.0.1:44210 Closing
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32788 Accepted
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32788 [200]: GET /api/auth/profile
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32788 Closing
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32790 Accepted
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32790 [200]: GET /api/submissions/history
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32790 Closing
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32798 Accepted
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32798 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32798 Closing
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32810 Accepted
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32810 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32810 Closing
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32816 Accepted
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32816 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32816 Closing
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32828 Accepted
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32828 [200]: GET /api/notifications
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32828 Closing
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32840 Accepted
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32840 [200]: GET /api/problems
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32840 Closing
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32852 Accepted
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32852 [200]: GET /api/notifications/count
+[Sat Jul 18 10:32:56 2026] 127.0.0.1:32852 Closing
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43398 Accepted
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43398 [200]: GET /api/auth/profile
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43398 Closing
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43406 Accepted
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43406 [200]: GET /api/submissions/history
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43406 Closing
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43410 Accepted
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43410 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43410 Closing
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43414 Accepted
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43414 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43414 Closing
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43428 Accepted
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43428 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43428 Closing
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43436 Accepted
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43436 [200]: GET /api/notifications
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43436 Closing
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43442 Accepted
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43442 [200]: GET /api/problems
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43442 Closing
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43452 Accepted
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43452 [200]: GET /api/notifications/count
+[Sat Jul 18 10:33:03 2026] 127.0.0.1:43452 Closing
+[Sat Jul 18 10:33:08 2026] 127.0.0.1:43462 Accepted
+[Sat Jul 18 10:33:08 2026] 127.0.0.1:43462 [200]: PUT /api/notifications
+[Sat Jul 18 10:33:08 2026] 127.0.0.1:43462 Closing
+[Sat Jul 18 10:33:08 2026] 127.0.0.1:43472 Accepted
+[Sat Jul 18 10:33:08 2026] 127.0.0.1:43472 [200]: GET /api/notifications
+[Sat Jul 18 10:33:08 2026] 127.0.0.1:43472 Closing
+[Sat Jul 18 10:33:08 2026] 127.0.0.1:43474 Accepted
+[Sat Jul 18 10:33:08 2026] 127.0.0.1:43474 [200]: GET /api/notifications/count
+[Sat Jul 18 10:33:08 2026] 127.0.0.1:43474 Closing
+[Sat Jul 18 10:33:21 2026] 127.0.0.1:44000 Accepted
+[Sat Jul 18 10:33:21 2026] 127.0.0.1:44000 [201]: POST /api/problems
+[Sat Jul 18 10:33:21 2026] 127.0.0.1:44000 Closing
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44012 Accepted
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44012 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44012 Closing
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44016 Accepted
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44016 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44016 Closing
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44024 Accepted
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44024 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44024 Closing
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44040 Accepted
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44040 [200]: GET /api/notifications
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44040 Closing
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44042 Accepted
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44042 [200]: GET /api/notifications/count
+[Sat Jul 18 10:33:23 2026] 127.0.0.1:44042 Closing
+[Sat Jul 18 10:33:27 2026] 127.0.0.1:44048 Accepted
+[Sat Jul 18 10:33:27 2026] 127.0.0.1:44048 [200]: GET /api/admin/problems
+[Sat Jul 18 10:33:27 2026] 127.0.0.1:44048 Closing
+[Sat Jul 18 10:33:32 2026] 127.0.0.1:59764 Accepted
+[Sat Jul 18 10:33:32 2026] 127.0.0.1:59764 [200]: OPTIONS /api/admin/problems/13/reject
+[Sat Jul 18 10:33:32 2026] 127.0.0.1:59764 Closing
+[Sat Jul 18 10:33:32 2026] 127.0.0.1:59770 Accepted
+[Sat Jul 18 10:33:32 2026] 127.0.0.1:59770 [200]: POST /api/admin/problems/13/reject
+[Sat Jul 18 10:33:32 2026] 127.0.0.1:59770 Closing
+[Sat Jul 18 10:33:32 2026] 127.0.0.1:59778 Accepted
+[Sat Jul 18 10:33:32 2026] 127.0.0.1:59778 [200]: GET /api/admin/problems
+[Sat Jul 18 10:33:32 2026] 127.0.0.1:59778 Closing
+[Sat Jul 18 10:33:33 2026] 127.0.0.1:59784 Accepted
+[Sat Jul 18 10:33:33 2026] 127.0.0.1:59784 [200]: GET /api/notifications
+[Sat Jul 18 10:33:33 2026] 127.0.0.1:59784 Closing
+[Sat Jul 18 10:33:33 2026] 127.0.0.1:59788 Accepted
+[Sat Jul 18 10:33:33 2026] 127.0.0.1:59788 [200]: GET /api/notifications/count
+[Sat Jul 18 10:33:33 2026] 127.0.0.1:59788 Closing
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59798 Accepted
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59798 [200]: GET /api/auth/profile
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59798 Closing
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59804 Accepted
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59804 [200]: GET /api/submissions/history
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59804 Closing
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59812 Accepted
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59812 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59812 Closing
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59816 Accepted
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59816 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59816 Closing
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59820 Accepted
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59820 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59820 Closing
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59828 Accepted
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59828 [200]: GET /api/notifications
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59828 Closing
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59840 Accepted
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59840 [200]: GET /api/problems
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59840 Closing
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59854 Accepted
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59854 [200]: GET /api/notifications/count
+[Sat Jul 18 10:33:35 2026] 127.0.0.1:59854 Closing
+[Sat Jul 18 10:34:05 2026] 127.0.0.1:34304 Accepted
+[Sat Jul 18 10:34:05 2026] 127.0.0.1:34304 [200]: GET /api/notifications
+[Sat Jul 18 10:34:05 2026] 127.0.0.1:34304 Closing
+[Sat Jul 18 10:34:05 2026] 127.0.0.1:34314 Accepted
+[Sat Jul 18 10:34:05 2026] 127.0.0.1:34314 [200]: GET /api/notifications/count
+[Sat Jul 18 10:34:05 2026] 127.0.0.1:34314 Closing
+[Sat Jul 18 10:34:35 2026] 127.0.0.1:34222 Accepted
+[Sat Jul 18 10:34:35 2026] 127.0.0.1:34222 [200]: GET /api/notifications
+[Sat Jul 18 10:34:35 2026] 127.0.0.1:34222 Closing
+[Sat Jul 18 10:34:35 2026] 127.0.0.1:34224 Accepted
+[Sat Jul 18 10:34:35 2026] 127.0.0.1:34224 [200]: GET /api/notifications/count
+[Sat Jul 18 10:34:35 2026] 127.0.0.1:34224 Closing
+[Sat Jul 18 10:35:05 2026] 127.0.0.1:48980 Accepted
+[Sat Jul 18 10:35:05 2026] 127.0.0.1:48980 [200]: GET /api/notifications
+[Sat Jul 18 10:35:05 2026] 127.0.0.1:48980 Closing
+[Sat Jul 18 10:35:05 2026] 127.0.0.1:48994 Accepted
+[Sat Jul 18 10:35:05 2026] 127.0.0.1:48994 [200]: GET /api/notifications/count
+[Sat Jul 18 10:35:05 2026] 127.0.0.1:48994 Closing
+[Sat Jul 18 10:35:35 2026] 127.0.0.1:59912 Accepted
+[Sat Jul 18 10:35:35 2026] 127.0.0.1:59912 [200]: GET /api/notifications
+[Sat Jul 18 10:35:35 2026] 127.0.0.1:59912 Closing
+[Sat Jul 18 10:35:35 2026] 127.0.0.1:59926 Accepted
+[Sat Jul 18 10:35:35 2026] 127.0.0.1:59926 [200]: GET /api/notifications/count
+[Sat Jul 18 10:35:35 2026] 127.0.0.1:59926 Closing
+[Sat Jul 18 10:36:05 2026] 127.0.0.1:59230 Accepted
+[Sat Jul 18 10:36:05 2026] 127.0.0.1:59230 [200]: GET /api/notifications
+[Sat Jul 18 10:36:05 2026] 127.0.0.1:59230 Closing
+[Sat Jul 18 10:36:05 2026] 127.0.0.1:59244 Accepted
+[Sat Jul 18 10:36:05 2026] 127.0.0.1:59244 [200]: GET /api/notifications/count
+[Sat Jul 18 10:36:05 2026] 127.0.0.1:59244 Closing
+[Sat Jul 18 10:36:35 2026] 127.0.0.1:46812 Accepted
+[Sat Jul 18 10:36:35 2026] 127.0.0.1:46812 [200]: GET /api/notifications
+[Sat Jul 18 10:36:35 2026] 127.0.0.1:46812 Closing
+[Sat Jul 18 10:36:35 2026] 127.0.0.1:46814 Accepted
+[Sat Jul 18 10:36:35 2026] 127.0.0.1:46814 [200]: GET /api/notifications/count
+[Sat Jul 18 10:36:35 2026] 127.0.0.1:46814 Closing
+[Sat Jul 18 10:37:05 2026] 127.0.0.1:52202 Accepted
+[Sat Jul 18 10:37:05 2026] 127.0.0.1:52202 [200]: GET /api/notifications
+[Sat Jul 18 10:37:05 2026] 127.0.0.1:52202 Closing
+[Sat Jul 18 10:37:05 2026] 127.0.0.1:52212 Accepted
+[Sat Jul 18 10:37:05 2026] 127.0.0.1:52212 [200]: GET /api/notifications/count
+[Sat Jul 18 10:37:05 2026] 127.0.0.1:52212 Closing
+[Sat Jul 18 10:37:35 2026] 127.0.0.1:37962 Accepted
+[Sat Jul 18 10:37:35 2026] 127.0.0.1:37962 [200]: GET /api/notifications
+[Sat Jul 18 10:37:35 2026] 127.0.0.1:37962 Closing
+[Sat Jul 18 10:37:35 2026] 127.0.0.1:37978 Accepted
+[Sat Jul 18 10:37:35 2026] 127.0.0.1:37978 [200]: GET /api/notifications/count
+[Sat Jul 18 10:37:35 2026] 127.0.0.1:37978 Closing
+[Sat Jul 18 10:37:59 2026] 127.0.0.1:59316 Accepted
+[Sat Jul 18 10:37:59 2026] 127.0.0.1:59324 Accepted
+[Sat Jul 18 10:38:00 2026] 127.0.0.1:59316 [200]: GET /api/auth/profile
+[Sat Jul 18 10:38:00 2026] 127.0.0.1:59316 Closing
+[Sat Jul 18 10:38:00 2026] 127.0.0.1:59340 Accepted
+[Sat Jul 18 10:38:00 2026] 127.0.0.1:59324 [200]: GET /api/submissions/history
+[Sat Jul 18 10:38:00 2026] 127.0.0.1:59324 Closing
+[Sat Jul 18 10:38:00 2026] 127.0.0.1:59356 Accepted
+[Sat Jul 18 10:38:01 2026] 127.0.0.1:59340 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:38:01 2026] 127.0.0.1:59340 Closing
+[Sat Jul 18 10:38:01 2026] 127.0.0.1:59360 Accepted
+[Sat Jul 18 10:38:01 2026] 127.0.0.1:59356 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:38:01 2026] 127.0.0.1:59356 Closing
+[Sat Jul 18 10:38:01 2026] 127.0.0.1:59364 Accepted
+[Sat Jul 18 10:38:01 2026] 127.0.0.1:59360 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:38:01 2026] 127.0.0.1:59360 Closing
+[Sat Jul 18 10:38:01 2026] 127.0.0.1:59364 [200]: GET /api/notifications
+[Sat Jul 18 10:38:01 2026] 127.0.0.1:59364 Closing
+[Sat Jul 18 10:38:02 2026] 127.0.0.1:59366 Accepted
+[Sat Jul 18 10:38:02 2026] 127.0.0.1:59366 [200]: GET /api/problems
+[Sat Jul 18 10:38:02 2026] 127.0.0.1:59366 Closing
+[Sat Jul 18 10:38:02 2026] 127.0.0.1:59380 Accepted
+[Sat Jul 18 10:38:02 2026] 127.0.0.1:59380 [200]: GET /api/notifications/count
+[Sat Jul 18 10:38:02 2026] 127.0.0.1:59380 Closing
+[Sat Jul 18 10:38:07 2026] 127.0.0.1:59394 Accepted
+[Sat Jul 18 10:38:07 2026] 127.0.0.1:59394 [200]: OPTIONS /api/problems/13
+[Sat Jul 18 10:38:07 2026] 127.0.0.1:59394 Closing
+[Sat Jul 18 10:38:07 2026] 127.0.0.1:59396 Accepted
+[Sat Jul 18 10:38:07 2026] 127.0.0.1:59396 [200]: GET /api/problems/13
+[Sat Jul 18 10:38:07 2026] 127.0.0.1:59396 Closing
+[Sat Jul 18 10:38:07 2026] 127.0.0.1:59410 Accepted
+[Sat Jul 18 10:38:07 2026] 127.0.0.1:59410 [200]: OPTIONS /api/problems/13/testcases
+[Sat Jul 18 10:38:07 2026] 127.0.0.1:59410 Closing
+[Sat Jul 18 10:38:07 2026] 127.0.0.1:59422 Accepted
+[Sat Jul 18 10:38:08 2026] 127.0.0.1:59422 [200]: GET /api/problems/13/testcases
+[Sat Jul 18 10:38:08 2026] 127.0.0.1:59422 Closing
+[Sat Jul 18 10:38:14 2026] 127.0.0.1:58470 Accepted
+[Sat Jul 18 10:38:16 2026] 127.0.0.1:58470 [200]: POST /api/problems
+[Sat Jul 18 10:38:16 2026] 127.0.0.1:58470 Closing
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36150 Accepted
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36150 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36150 Closing
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36158 Accepted
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36162 Accepted
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36158 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36158 Closing
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36172 Accepted
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36162 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36162 Closing
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36172 [200]: GET /api/notifications
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36172 Closing
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36176 Accepted
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36176 [200]: GET /api/notifications/count
+[Sat Jul 18 10:38:26 2026] 127.0.0.1:36176 Closing
+[Sat Jul 18 10:38:30 2026] 127.0.0.1:36552 Accepted
+[Sat Jul 18 10:38:30 2026] 127.0.0.1:36552 [200]: GET /api/admin/problems
+[Sat Jul 18 10:38:30 2026] 127.0.0.1:36552 Closing
+[Sat Jul 18 10:38:30 2026] 127.0.0.1:36556 Accepted
+[Sat Jul 18 10:38:30 2026] 127.0.0.1:36556 [200]: GET /api/notifications
+[Sat Jul 18 10:38:30 2026] 127.0.0.1:36556 Closing
+[Sat Jul 18 10:38:30 2026] 127.0.0.1:36564 Accepted
+[Sat Jul 18 10:38:30 2026] 127.0.0.1:36564 [200]: GET /api/notifications/count
+[Sat Jul 18 10:38:30 2026] 127.0.0.1:36564 Closing
+[Sat Jul 18 10:38:39 2026] 127.0.0.1:36398 Accepted
+[Sat Jul 18 10:38:40 2026] 127.0.0.1:36398 [200]: POST /api/admin/problems/13/reject
+[Sat Jul 18 10:38:40 2026] 127.0.0.1:36398 Closing
+[Sat Jul 18 10:38:40 2026] 127.0.0.1:36402 Accepted
+[Sat Jul 18 10:38:40 2026] 127.0.0.1:36402 [200]: GET /api/admin/problems
+[Sat Jul 18 10:38:40 2026] 127.0.0.1:36402 Closing
+[Sat Jul 18 10:38:44 2026] 127.0.0.1:36406 Accepted
+[Sat Jul 18 10:38:44 2026] 127.0.0.1:36406 [200]: GET /api/auth/profile
+[Sat Jul 18 10:38:44 2026] 127.0.0.1:36406 Closing
+[Sat Jul 18 10:38:44 2026] 127.0.0.1:36408 Accepted
+[Sat Jul 18 10:38:44 2026] 127.0.0.1:36420 Accepted
+[Sat Jul 18 10:38:44 2026] 127.0.0.1:36408 [200]: GET /api/submissions/history
+[Sat Jul 18 10:38:44 2026] 127.0.0.1:36408 Closing
+[Sat Jul 18 10:38:44 2026] 127.0.0.1:36422 Accepted
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36420 [200]: GET /api/problems?author_id=3&approved=1
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36420 Closing
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36430 Accepted
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36422 [200]: GET /api/problems?author_id=3&approved=0
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36422 Closing
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36432 Accepted
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36430 [200]: GET /api/problems?author_id=3&approved=2
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36430 Closing
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36440 Accepted
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36432 [200]: GET /api/notifications
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36432 Closing
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36440 [200]: GET /api/problems
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36440 Closing
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36454 Accepted
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36454 [200]: GET /api/notifications/count
+[Sat Jul 18 10:38:45 2026] 127.0.0.1:36454 Closing
+[Sat Jul 18 10:38:48 2026] 127.0.0.1:36466 Accepted
+[Sat Jul 18 10:38:48 2026] 127.0.0.1:36466 [200]: GET /api/problems/13
+[Sat Jul 18 10:38:48 2026] 127.0.0.1:36466 Closing
+[Sat Jul 18 10:38:48 2026] 127.0.0.1:36474 Accepted
+[Sat Jul 18 10:38:48 2026] 127.0.0.1:36474 [200]: GET /api/problems/13/testcases
+[Sat Jul 18 10:38:48 2026] 127.0.0.1:36474 Closing
+[Sat Jul 18 10:38:55 2026] 127.0.0.1:56146 Accepted
+[Sat Jul 18 10:38:55 2026] 127.0.0.1:56146 [200]: PUT /api/notifications
+[Sat Jul 18 10:38:55 2026] 127.0.0.1:56146 Closing
+[Sat Jul 18 10:38:55 2026] 127.0.0.1:56160 Accepted
+[Sat Jul 18 10:38:55 2026] 127.0.0.1:56160 [200]: GET /api/notifications
+[Sat Jul 18 10:38:55 2026] 127.0.0.1:56160 Closing
+[Sat Jul 18 10:38:55 2026] 127.0.0.1:56168 Accepted
+[Sat Jul 18 10:38:55 2026] 127.0.0.1:56168 [200]: GET /api/notifications/count
+[Sat Jul 18 10:38:55 2026] 127.0.0.1:56168 Closing
+[Sat Jul 18 10:39:02 2026] 127.0.0.1:54088 Accepted
+[Sat Jul 18 10:39:02 2026] 127.0.0.1:54088 [200]: GET /api/problems
+[Sat Jul 18 10:39:02 2026] 127.0.0.1:54088 Closing
+[Sat Jul 18 10:39:02 2026] 127.0.0.1:54102 Accepted
+[Sat Jul 18 10:39:02 2026] 127.0.0.1:54102 [200]: GET /api/submissions/history
+[Sat Jul 18 10:39:02 2026] 127.0.0.1:54102 Closing
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:54118 Accepted
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:54118 [200]: OPTIONS /api/problems/1
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:54118 Closing
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:54134 Accepted
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:54134 [200]: GET /api/problems/1
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:54134 Closing
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:54146 Accepted
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:54146 [200]: OPTIONS /api/problems/1/samples
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:54146 Closing
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:54148 Accepted
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:54148 [200]: GET /api/problems/1/samples
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:54148 Closing
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:35220 Accepted
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:35220 [200]: OPTIONS /api/comments/problem/1
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:35220 Closing
+[Sat Jul 18 10:39:09 2026] 127.0.0.1:35236 Accepted
+[Sat Jul 18 10:39:10 2026] 127.0.0.1:35236 [200]: GET /api/comments/problem/1
+[Sat Jul 18 10:39:10 2026] 127.0.0.1:35236 Closing
+[Sat Jul 18 10:41:24 2026] 127.0.0.1:42562 Accepted
+[Sat Jul 18 10:41:24 2026] 127.0.0.1:42562 [200]: GET /api/problems/1
+[Sat Jul 18 10:41:24 2026] 127.0.0.1:42562 Closing
+[Sat Jul 18 10:41:24 2026] 127.0.0.1:42566 Accepted
+[Sat Jul 18 10:41:25 2026] 127.0.0.1:42566 [200]: GET /api/problems/1/samples
+[Sat Jul 18 10:41:25 2026] 127.0.0.1:42566 Closing
+[Sat Jul 18 10:41:25 2026] 127.0.0.1:42580 Accepted
+[Sat Jul 18 10:41:25 2026] 127.0.0.1:42580 [200]: GET /api/comments/problem/1
+[Sat Jul 18 10:41:25 2026] 127.0.0.1:42580 Closing
+[Sat Jul 18 10:41:32 2026] 127.0.0.1:33668 Accepted
+[Sat Jul 18 10:41:32 2026] 127.0.0.1:33668 [200]: GET /api/problems/1
+[Sat Jul 18 10:41:32 2026] 127.0.0.1:33668 Closing
+[Sat Jul 18 10:41:32 2026] 127.0.0.1:33674 Accepted
+[Sat Jul 18 10:41:32 2026] 127.0.0.1:33674 [200]: GET /api/problems/1/samples
+[Sat Jul 18 10:41:32 2026] 127.0.0.1:33674 Closing
+[Sat Jul 18 10:41:32 2026] 127.0.0.1:33688 Accepted
+[Sat Jul 18 10:41:32 2026] 127.0.0.1:33688 [200]: GET /api/comments/problem/1
+[Sat Jul 18 10:41:32 2026] 127.0.0.1:33688 Closing
+[Sat Jul 18 10:41:36 2026] 127.0.0.1:33700 Accepted
+[Sat Jul 18 10:41:36 2026] 127.0.0.1:33700 [200]: OPTIONS /api/problems/1
+[Sat Jul 18 10:41:36 2026] 127.0.0.1:33700 Closing
+[Sat Jul 18 10:41:36 2026] 127.0.0.1:33702 Accepted
+[Sat Jul 18 10:41:36 2026] 127.0.0.1:33702 [200]: GET /api/problems/1
+[Sat Jul 18 10:41:36 2026] 127.0.0.1:33702 Closing
+[Sat Jul 18 10:41:37 2026] 127.0.0.1:33712 Accepted
+[Sat Jul 18 10:41:37 2026] 127.0.0.1:33712 [200]: GET /api/problems/1/samples
+[Sat Jul 18 10:41:37 2026] 127.0.0.1:33712 Closing
+[Sat Jul 18 10:41:37 2026] 127.0.0.1:33716 Accepted
+[Sat Jul 18 10:41:37 2026] 127.0.0.1:33716 [200]: GET /api/comments/problem/1
+[Sat Jul 18 10:41:37 2026] 127.0.0.1:33716 Closing
+[Sat Jul 18 10:44:12 2026] 127.0.0.1:52904 Accepted
+[Sat Jul 18 10:44:12 2026] 127.0.0.1:52904 [200]: GET /api/problems/1
+[Sat Jul 18 10:44:12 2026] 127.0.0.1:52904 Closing
+[Sat Jul 18 10:44:12 2026] 127.0.0.1:52920 Accepted
+[Sat Jul 18 10:44:12 2026] 127.0.0.1:52920 [200]: GET /api/problems/1/samples
+[Sat Jul 18 10:44:12 2026] 127.0.0.1:52920 Closing
+[Sat Jul 18 10:44:12 2026] 127.0.0.1:52934 Accepted
+[Sat Jul 18 10:44:12 2026] 127.0.0.1:52934 [200]: GET /api/comments/problem/1
+[Sat Jul 18 10:44:12 2026] 127.0.0.1:52934 Closing
+[Sat Jul 18 10:44:25 2026] 127.0.0.1:33716 Accepted
+[Sat Jul 18 10:44:25 2026] 127.0.0.1:33716 [200]: GET /api/problems
+[Sat Jul 18 10:44:25 2026] 127.0.0.1:33716 Closing
+[Sat Jul 18 10:44:25 2026] 127.0.0.1:33722 Accepted
+[Sat Jul 18 10:44:25 2026] 127.0.0.1:33722 [200]: GET /api/submissions/history
+[Sat Jul 18 10:44:25 2026] 127.0.0.1:33722 Closing
+[Sat Jul 18 10:44:29 2026] 127.0.0.1:33726 Accepted
+[Sat Jul 18 10:44:29 2026] 127.0.0.1:33726 [200]: GET /api/problems/1
+[Sat Jul 18 10:44:29 2026] 127.0.0.1:33726 Closing
+[Sat Jul 18 10:44:29 2026] 127.0.0.1:40572 Accepted
+[Sat Jul 18 10:44:29 2026] 127.0.0.1:40572 [200]: GET /api/problems/1/samples
+[Sat Jul 18 10:44:29 2026] 127.0.0.1:40572 Closing
+[Sat Jul 18 10:44:29 2026] 127.0.0.1:40584 Accepted
+[Sat Jul 18 10:44:29 2026] 127.0.0.1:40584 [200]: GET /api/comments/problem/1
+[Sat Jul 18 10:44:29 2026] 127.0.0.1:40584 Closing
+[Sat Jul 18 10:45:48 2026] 127.0.0.1:58094 Accepted
+[Sat Jul 18 10:45:48 2026] 127.0.0.1:58094 [200]: GET /api/problems/1
+[Sat Jul 18 10:45:48 2026] 127.0.0.1:58094 Closing
+[Sat Jul 18 10:45:48 2026] 127.0.0.1:58106 Accepted
+[Sat Jul 18 10:45:48 2026] 127.0.0.1:58106 [200]: GET /api/problems/1/samples
+[Sat Jul 18 10:45:48 2026] 127.0.0.1:58106 Closing
+[Sat Jul 18 10:45:48 2026] 127.0.0.1:58108 Accepted
+[Sat Jul 18 10:45:48 2026] 127.0.0.1:58108 [200]: GET /api/comments/problem/1
+[Sat Jul 18 10:45:48 2026] 127.0.0.1:58108 Closing
+[Sat Jul 18 10:46:28 2026] 127.0.0.1:45554 Accepted
+[Sat Jul 18 10:46:28 2026] 127.0.0.1:45554 [200]: GET /api/problems/1
+[Sat Jul 18 10:46:28 2026] 127.0.0.1:45554 Closing
+[Sat Jul 18 10:46:28 2026] 127.0.0.1:45560 Accepted
+[Sat Jul 18 10:46:28 2026] 127.0.0.1:45560 [200]: GET /api/problems/1/samples
+[Sat Jul 18 10:46:28 2026] 127.0.0.1:45560 Closing
+[Sat Jul 18 10:46:28 2026] 127.0.0.1:45562 Accepted
+[Sat Jul 18 10:46:28 2026] 127.0.0.1:45562 [200]: GET /api/comments/problem/1
+[Sat Jul 18 10:46:28 2026] 127.0.0.1:45562 Closing
+[Sat Jul 18 10:46:45 2026] 127.0.0.1:60146 Accepted
+[Sat Jul 18 10:46:45 2026] 127.0.0.1:60146 [200]: OPTIONS /api/comments
+[Sat Jul 18 10:46:45 2026] 127.0.0.1:60146 Closing
+[Sat Jul 18 10:46:45 2026] 127.0.0.1:60152 Accepted
+[Sat Jul 18 10:46:46 2026] 127.0.0.1:60152 [201]: POST /api/comments
+[Sat Jul 18 10:46:46 2026] 127.0.0.1:60152 Closing
+[Sat Jul 18 10:46:46 2026] 127.0.0.1:60158 Accepted
+[Sat Jul 18 10:46:46 2026] 127.0.0.1:60158 [200]: GET /api/comments/problem/1
+[Sat Jul 18 10:46:46 2026] 127.0.0.1:60158 Closing
+[Sat Jul 18 10:46:59 2026] 127.0.0.1:50138 Accepted
+[Sat Jul 18 10:46:59 2026] 127.0.0.1:50138 [200]: GET /api/problems
+[Sat Jul 18 10:46:59 2026] 127.0.0.1:50138 Closing
+[Sat Jul 18 10:46:59 2026] 127.0.0.1:50154 Accepted
+[Sat Jul 18 10:46:59 2026] 127.0.0.1:50154 [200]: GET /api/submissions/history
+[Sat Jul 18 10:46:59 2026] 127.0.0.1:50154 Closing
+[Sat Jul 18 10:47:01 2026] 127.0.0.1:50164 Accepted
+[Sat Jul 18 10:47:02 2026] 127.0.0.1:50164 [200]: GET /api/problems/1
+[Sat Jul 18 10:47:02 2026] 127.0.0.1:50164 Closing
+[Sat Jul 18 10:47:02 2026] 127.0.0.1:50176 Accepted
+[Sat Jul 18 10:47:02 2026] 127.0.0.1:50176 [200]: GET /api/problems/1/samples
+[Sat Jul 18 10:47:02 2026] 127.0.0.1:50176 Closing
+[Sat Jul 18 10:47:02 2026] 127.0.0.1:50186 Accepted
+[Sat Jul 18 10:47:02 2026] 127.0.0.1:50186 [200]: GET /api/comments/problem/1
+[Sat Jul 18 10:47:02 2026] 127.0.0.1:50186 Closing
+[Sat Jul 18 10:47:17 2026] 127.0.0.1:40948 Accepted
+[Sat Jul 18 10:47:18 2026] 127.0.0.1:40948 [201]: POST /api/comments
+[Sat Jul 18 10:47:18 2026] 127.0.0.1:40948 Closing
+[Sat Jul 18 10:47:18 2026] 127.0.0.1:40964 Accepted
+[Sat Jul 18 10:47:18 2026] 127.0.0.1:40964 [200]: GET /api/comments/problem/1
+[Sat Jul 18 10:47:18 2026] 127.0.0.1:40964 Closing
+[Sat Jul 18 10:51:20 2026] 127.0.0.1:46150 Accepted
+[Sat Jul 18 10:51:20 2026] 127.0.0.1:46150 [200]: GET /api/problems/1
+[Sat Jul 18 10:51:20 2026] 127.0.0.1:46150 Closing
+[Sat Jul 18 10:51:20 2026] 127.0.0.1:46154 Accepted
+[Sat Jul 18 10:51:21 2026] 127.0.0.1:46154 [200]: GET /api/problems/1/samples
+[Sat Jul 18 10:51:21 2026] 127.0.0.1:46154 Closing
+[Sat Jul 18 10:51:21 2026] 127.0.0.1:46156 Accepted
+[Sat Jul 18 10:51:21 2026] 127.0.0.1:46156 [200]: GET /api/comments/problem/1
+[Sat Jul 18 10:51:21 2026] 127.0.0.1:46156 Closing
+[Sat Jul 18 10:51:31 2026] 127.0.0.1:35410 Accepted
+[Sat Jul 18 10:51:31 2026] 127.0.0.1:35410 [200]: GET /api/problems
+[Sat Jul 18 10:51:31 2026] 127.0.0.1:35410 Closing
+[Sat Jul 18 10:51:31 2026] 127.0.0.1:35426 Accepted
+[Sat Jul 18 10:51:31 2026] 127.0.0.1:35426 [200]: GET /api/submissions/history
+[Sat Jul 18 10:51:31 2026] 127.0.0.1:35426 Closing

@@ -24,25 +24,25 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2">
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex items-center justify-center transition-colors duration-200">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_40%),radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.08),transparent_50%)] pointer-events-none"></div>
+<body class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 min-h-screen flex items-center justify-center transition-colors duration-200">
 
-    <div x-data="loginForm()" class="w-full max-w-md p-8 rounded-2xl shadow-xl glass-panel-dark relative z-10">
+
+    <div x-data="loginForm()" class="w-full max-w-md p-8 rounded-xl shadow-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 relative z-10">
         <!-- Logo/Header -->
         <div class="text-center mb-8">
-            <h1 class="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
+            <h1 class="text-3xl font-extrabold tracking-tight text-blue-700 dark:text-blue-400">
                 DSA Judge
             </h1>
-            <p class="text-slate-400 mt-2" x-text="isRegister ? 'Create an account to start coding' : 'Welcome back, coder!'"></p>
+            <p class="text-slate-500 dark:text-slate-400 mt-2" x-text="isRegister ? 'Create an account to start coding' : 'Welcome back, coder!'"></p>
         </div>
 
         <!-- Alert Notification -->
         <div x-show="alert.show" x-transition class="mb-4 p-3 rounded-lg text-sm font-medium"
-             :class="alert.type === 'error' ? 'bg-red-500/10 text-red-400 border border-red-500/20' : 'bg-green-500/10 text-green-400 border border-green-500/20'">
+             :class="alert.type === 'error' ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border border-red-300 dark:border-red-700' : 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 border border-green-300 dark:border-green-700'">
             <span x-text="alert.message"></span>
         </div>
 
@@ -50,28 +50,28 @@
         <form @submit.prevent="submitForm">
             <!-- Username (Registration only) -->
             <div class="mb-4" x-show="isRegister">
-                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Username</label>
+                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Username</label>
                 <input type="text" x-model="formData.username" 
-                       class="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 px-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                       class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-3 px-4 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
             </div>
 
             <!-- Email -->
             <div class="mb-4">
-                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Email Address</label>
+                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
                 <input type="email" x-model="formData.email" required
-                       class="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 px-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                       class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-3 px-4 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
             </div>
 
             <!-- Password -->
             <div class="mb-6">
-                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Password</label>
+                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Password</label>
                 <input type="password" x-model="formData.password" required
-                       class="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 px-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                       class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-3 px-4 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
             </div>
 
             <!-- Submit Button -->
             <button type="submit" 
-                    class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold py-3 px-4 rounded-xl shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-950"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                     :disabled="loading">
                 <span x-show="!loading" x-text="isRegister ? 'Sign Up' : 'Sign In'"></span>
                 <span x-show="loading">Processing...</span>
@@ -80,7 +80,7 @@
 
         <!-- Toggle Auth mode -->
         <div class="text-center mt-6">
-            <button @click="toggleMode" class="text-sm text-slate-400 hover:text-white transition-colors">
+            <button @click="toggleMode" class="text-sm text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors">
                 <span x-text="isRegister ? 'Already have an account? Sign In' : 'New here? Create an account'"></span>
             </button>
         </div>
@@ -108,6 +108,9 @@
                     this.alert.show = false;
                 },
                 async submitForm() {
+                    // Prevent double submission
+                    if (this.loading) return;
+                    
                     this.loading = true;
                     this.alert.show = false;
 
@@ -136,6 +139,7 @@
                             this.alert.type = 'success';
                             this.alert.message = 'Registration successful! You can now login.';
                             this.isRegister = false;
+                            this.formData.username = '';
                             this.formData.password = '';
                         } else {
                             Auth.setToken(resData.token);
@@ -145,6 +149,7 @@
                         this.alert.show = true;
                         this.alert.type = 'error';
                         this.alert.message = err.message;
+                        console.error('Authentication error:', err);
                     } finally {
                         this.loading = false;
                     }

@@ -1,15 +1,18 @@
 <?php
 require_once __DIR__ . '/../../config/database.php';
 require_once __DIR__ . '/../Models/Problem.php';
+require_once __DIR__ . '/../Models/Notification.php';
 
 class AdminController {
     private $db;
     private $problem;
+    private $notification;
 
     public function __construct() {
         $database = new Database();
         $this->db = $database->getConnection();
         $this->problem = new Problem($this->db);
+        $this->notification = new Notification($this->db);
     }
 
     public function createProblem($authorId, $data) {
@@ -131,13 +134,52 @@ class AdminController {
         echo json_encode($problems);
     }
 
-    public function approveProblem($id) {
-        if ($this->problem->approve($id)) {
+    public function approveProblem($id, $data) {
+        if (empty($data['difficulty'])) {
+            http_response_code(400);
+            echo json_encode(["message" => "Difficulty is required to approve."]);
+            return;
+        }
+        $comment = !empty($data['comment']) ? $data['comment'] : null;
+        if ($this->problem->approve($id, $data['difficulty'], $comment)) {
+            // Get problem details to send notification
+            $problemData = $this->problem->getById($id);
+            if ($problemData) {
+                $this->notification->create(
+                    $problemData['author_id'],
+                    $id,
+                    'problem_approved',
+                    'Your Problem Was Approved! 🎉',
+                    'Your problem "' . $problemData['title'] . '" has been approved and is now live on the platform!'
+                );
+            }
             http_response_code(200);
             echo json_encode(["message" => "Problem approved successfully."]);
         } else {
             http_response_code(500);
             echo json_encode(["message" => "Failed to approve problem."]);
+        }
+    }
+
+    public function rejectProblem($id, $data) {
+        $reason = !empty($data['reason']) ? $data['reason'] : 'No reason provided.';
+        if ($this->problem->reject($id, $reason)) {
+            // Get problem details to send notification
+            $problemData = $this->problem->getById($id);
+            if ($problemData) {
+                $this->notification->create(
+                    $problemData['author_id'],
+                    $id,
+                    'problem_rejected',
+                    'Your Problem Was Rejected',
+                    'Your problem "' . $problemData['title'] . '" was rejected. Reason: ' . $reason
+                );
+            }
+            http_response_code(200);
+            echo json_encode(["message" => "Problem rejected."]);
+        } else {
+            http_response_code(500);
+            echo json_encode(["message" => "Failed to reject problem."]);
         }
     }
 }
